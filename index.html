@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Curriculum Builder - User Journey Flow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+            line-height: 1.4;
+            color: #000;
+            background-color: #fff;
+            font-size: 12px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            text-align: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: 20px;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 50px;
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .legend-box {
+            width: 25px;
+            height: 20px;
+            border: 2px solid #000;
+        }
+        
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .flow-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        
+        .flow-box {
+            flex: 1;
+            padding: 25px 20px;
+            border: 2px solid #000;
+            text-align: center;
+            background: #fff;
+            position: relative;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .flow-box h3 {
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .flow-box p {
+            font-size: 10px;
+            text-transform: uppercase;
+            line-height: 1.4;
+            opacity: 0.8;
+        }
+        
+        .flow-box.ai-powered {
+            background: #0066CC;
+            color: #fff;
+            border-color: #0066CC;
+        }
+        
+        .flow-box.user-action {
+            background: #f8f8f8;
+            border-style: dashed;
+        }
+        
+        .flow-box.output {
+            background: #fff;
+            border: 2px solid #000;
+        }
+        
+        .flow-arrow {
+            font-size: 30px;
+            font-weight: bold;
+            color: #000;
+        }
+        
+        .flow-arrow-down {
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: #000;
+            margin: 10px 0;
+        }
+        
+        .phase-indicator {
+            position: absolute;
+            top: -12px;
+            left: 15px;
+            background: #000;
+            color: #fff;
+            padding: 6px 12px;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .ai-indicator {
+            background: #0066CC;
+            color: #fff;
+            padding: 3px 8px;
+            font-size: 8px;
+            font-weight: bold;
+            margin-top: 8px;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .entry-section {
+            background: #000;
+            color: #fff;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .completion-section {
+            background: #000;
+            color: #fff;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .flow-row {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .flow-arrow {
+                transform: rotate(90deg);
+                font-size: 25px;
+            }
+            
+            .legend {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="section-title">
+            AI CURRICULUM BUILDER<br>
+            <small style="font-size: 14px; color: #666; font-weight: normal;">USER JOURNEY FLOW - 6-PHASE CURRICULUM DEVELOPMENT</small>
+        </h1>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-box" style="background: #f8f8f8; border-style: dashed;"></div>
+                <span>USER ACTION</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box" style="background: #0066CC;"></div>
+                <span>AI-POWERED</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box" style="background: #fff;"></div>
+                <span>OUTPUT/RESULT</span>
+            </div>
+        </div>
+
+        <!-- ENTRY POINT -->
+        <div class="entry-section">
+            <h2 style="margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px;">LECTURER LOGIN & AI DASHBOARD</h2>
+            <p style="font-size: 11px; text-transform: uppercase; opacity: 0.8;">NP AUTHENTICATION → PERSONALIZED RECOMMENDATIONS → SMART COURSE SUGGESTIONS</p>
+        </div>
+
+        <div class="flow-container">
+            <!-- PHASE 1: COURSE SETUP -->
+            <div class="flow-row">
+                <div class="flow-box user-action">
+                    <div class="phase-indicator">PHASE 1</div>
+                    <h3>COURSE INPUT</h3>
+                    <p>School, Domain, Type<br>Title & Description<br>Basic Requirements</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-box ai-powered">
+                    <h3>AI COURSE ASSISTANT</h3>
+                    <p>Auto-suggest Codes<br>Similar Course Detection<br>Compliance Framework</p>
+                    <span class="ai-indicator">AI POWERED</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-box output">
+                    <h3>COURSE FOUNDATION</h3>
+                    <p>Validated Setup<br>Framework Applied<br>Standards Loaded</p>
+                </div>
+            </div>
+
+            <div class="flow-arrow-down">↓</div>
+
+            <!-- PHASE 2: LEARNING DESIGN -->
+            <div class="flow-row">
+                <div class="flow-box user-action">
+                    <div class="phase-indicator">PHASE 2</div>
+                    <h3>LEARNING OBJECTIVES</h3>
+                    <p>Review AI Suggestions<br>Select Outcomes<br>Modify as Needed</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-box ai-powered">
+                    <h3>AI OUTCOME GENERATOR</h3>
+                    <p>NLP Analysis<br>Industry Alignment<br>Framework Mapping</p>
+                    <span class="ai-indicator">AI POWERED</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-box output">
+                    <h3>LEARNING FRAMEWORK</h3>
+                    <p>Defined Outcomes<br>Mapped Competencies<br>Assessment Aligned</p>
+                </div>
+            </div>
+
+            <div class="flow-arrow-down">↓</div>
+
+            <!-- PHASE 3: CONTENT STRUCTURE -->
+            <div class="flow-row">
+                <div class="flow-box user-action">
+                    <div class="phase-indicator">PHASE 3</div>
+                    <h3>MODULE DESIGN</h3>
+                    <p>Review Timeline<br>Approve Structure<br>Adjust Schedule</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-box ai-powered">
+                    <h3>AI SCHEDULER</h3>
+                    <p>Workload Optimization<br>Content Sequencing<br>Hour Distribution</p>
+                    <span class="ai-indicator">AI POWERED</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-box output">
+                    <h3>MODULE STRUCTURE</h3>
+                    <p>Optimized Timeline<br>Balanced Workload<br>Progressive Learning</p>
+                </div>
+            </div>
+
+            <div class="flow-arrow-down">↓</div>
+
+            <!-- PHASE 4: ASSESSMENT STRATEGY -->
+            <div class="flow-row">
+                <div class="flow-box user-action">
+                    <div class="phase-indicator">PHASE 4</div>
+                    <h3>ASSESSMENT REVIEW</h3>
+                    <p>Approve Components<br>Adjust Weightings<br>Validate Methods</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-box ai-powered">
+                    <h3>AI ASSESSMENT ENGINE</h3>
+                    <p>Component Generation<br>Alignment Analysis<br>Method Optimization</p>
+                    <span class="ai-indicator">AI POWERED</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-box output">
+                    <h3>ASSESSMENT FRAMEWORK</h3>
+                    <p>Complete Strategy<br>Validated Alignment<br>Rubrics Ready</p>
+                </div>
+            </div>
+
+            <div class="flow-arrow-down">↓</div>
+
+            <!-- PHASE 5: MATERIALS GENERATION -->
+            <div class="flow-row">
+                <div class="flow-box user-action">
+                    <div class="phase-indicator">PHASE 5</div>
+                    <h3>MATERIAL SELECTION</h3>
+                    <p>Choose Documents<br>Customize Options<br>Set Preferences</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-box ai-powered">
+                    <h3>AI CONTENT GENERATOR</h3>
+                    <p>Document Types<br>Template Application<br>Quality Assurance</p>
+                    <span class="ai-indicator">AI POWERED</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-box output">
+                    <h3>TEACHING MATERIALS</h3>
+                    <p>Complete Package<br>Ready for Use<br>LMS Compatible</p>
+                </div>
+            </div>
+
+            <div class="flow-arrow-down">↓</div>
+
+            <!-- PHASE 6: REVIEW & DEPLOY -->
+            <div class="flow-row">
+                <div class="flow-box user-action">
+                    <div class="phase-indicator">PHASE 6</div>
+                    <h3>FINAL REVIEW</h3>
+                    <p>Quality Check<br>Approve Deployment<br>Confirm Settings</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-box ai-powered">
+                    <h3>AI VALIDATOR</h3>
+                    <p>Compliance Check<br>LMS Integration<br>Deployment Automation</p>
+                    <span class="ai-indicator">AI POWERED</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-box output">
+                    <h3>LIVE COURSE</h3>
+                    <p>Brightspace Ready<br>Materials Deployed<br>Students Enrolled</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
